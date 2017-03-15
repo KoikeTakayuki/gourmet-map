@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="./js/lib/vue.js"></script>
+    <body>
+        <div id="app">
+            <div v-for="(language, index) in languages">
+                <h2>name: {{ language.name }}</h2>
+                <p>feature: {{ language.feature }}</p>
+                <button v-on:click="test(index)">test</button>
+            </div>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    languages: [
+                        { name: 'lisp', feature: 'homoiconic' },
+                        { name: 'Haskell', feature: 'Pure functional' },
+                        { name: 'Java', feature: 'OOP' }
+                    ]
+                },
+                methods: {
+                    test: function(index) {
+                        console.log(this);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
